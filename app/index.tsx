@@ -1,15 +1,13 @@
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Hello World.</Text>
+    <View style={style.container}>
+      <Text>Allocations.</Text>
+
+      <Link href="/accounts">Go to Accounts</Link>
+      
     </View>
   );
 }
@@ -17,8 +15,8 @@ export default function Index() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
     justifyContent: "center",
-  }
-})
+  },
+});
