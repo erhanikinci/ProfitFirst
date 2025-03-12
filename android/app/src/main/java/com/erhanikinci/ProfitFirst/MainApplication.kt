@@ -16,6 +16,8 @@ import com.facebook.soloader.SoLoader
 import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper
 
+import com.nozbe.watermelondb.WatermelonDBPackage; // ⬅️ This!
+
 class MainApplication : Application(), ReactApplication {
 
   override val reactNativeHost: ReactNativeHost = ReactNativeHostWrapper(
@@ -36,6 +38,14 @@ class MainApplication : Application(), ReactApplication {
           override val isHermesEnabled: Boolean = BuildConfig.IS_HERMES_ENABLED
       }
   )
+
+  @Override
+protected List<ReactPackage> getPackages() {
+  return Arrays.<ReactPackage>asList(
+    new MainReactPackage(),
+    new WatermelonDBPackage() // ⬅️ Here!
+  );
+}
 
   override val reactHost: ReactHost
     get() = ReactNativeHostWrapper.createReactHost(applicationContext, reactNativeHost)
