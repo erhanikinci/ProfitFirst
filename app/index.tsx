@@ -1,22 +1,13 @@
-import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { Redirect } from 'expo-router'
 
-export default function Index() {
+const HomeScreen = () => {
   return (
-    <View style={style.container}>
-      <Text>Allocations.</Text>
-
-      <Link href="/accounts">Go to Accounts</Link>
-      
-    </View>
-  );
+    <Redirect href={'/allocations'} />
+  )
 }
 
-const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default HomeScreen
+
+const styles = StyleSheet.create({})

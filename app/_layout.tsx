@@ -5,11 +5,12 @@ export default function RootLayout() {
   return (
     <Tabs>
       <Tabs.Screen
-        name="index"
+        name="allocations"
         options={{
           title: "Allocations",
+          headerShown: false,
           tabBarIcon: ({ size, color }) => (
-            <MaterialIcons name="account-tree" size={24} color="black" />
+            <MaterialIcons name="account-tree" size={size} color={color} />
           ),
         }}
       />
@@ -18,12 +19,14 @@ export default function RootLayout() {
         options={{
           title: "Accounts",
           tabBarIcon: ({ size, color }) => (
-            <MaterialIcons
-              name="account-balance-wallet"
-              size={size}
-              color={color}
-            />
+            <MaterialIcons name="account-balance-wallet" size={size} color={color} />
           ),
+        }}
+      />
+      <Tabs.Screen
+      name="index"
+        options={{
+          href: null,
         }}
       />
     </Tabs>
